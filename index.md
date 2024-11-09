@@ -4,7 +4,7 @@ layout: page
 
 # About Me
 
-<img src="images/pfp.JPEG" class="floatpic">
+<img src="images/me.jpg" class="floatpic">
 
 Hi, I am **Anthony Tong**.
 
