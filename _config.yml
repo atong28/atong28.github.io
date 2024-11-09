@@ -7,10 +7,10 @@ url: https://atong28.github.io
 # Owner/author information
 owner:
   name: Anthony Tong
-  avatar: images/me.jpg
+  avatar: me.jpg
   # bio: Two roads diverged in woods, I took the one less traveled by.
   email: a8tong@ucsd.edu
-  cv: file/cv.pdf
+  cv: https://atong28.github.io/file/cv.pdf
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   github: atong28
   linkedin: atong28
