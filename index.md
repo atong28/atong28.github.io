@@ -12,7 +12,7 @@ I am a second year undergraduate student double majoring in Computer Science and
 at University of California, San Diego (UCSD) and interested in reasoning in large language models
 and tokenization/representation methods.
 
-I am currently working with Professor [Gary Cottrel](https://cseweb.ucsd.edu/~gary/) on a molecular
+I am currently working with Professor [Gary Cottrell](https://cseweb.ucsd.edu/~gary/) on a molecular
 identification project. I was previously advised by Professor
 [Edwin Solares](https://edwinsolares.com/) on multiple computer vision projects regarding species
 rescue and agricultural and language conservation, as well as Professors [Shengjie (Patrick) Zhai](https://www.unlv.edu/people/shengjie-zhai) and [Ming Zhu](https://www.unlv.edu/people/ming-zhu-phd)
