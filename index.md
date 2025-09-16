@@ -12,8 +12,8 @@ I am a third year undergraduate student double majoring in Computer Science and 
 at University of California, San Diego (UCSD) and broadly interested in building tools for
 applications in AI.
 
-I am currently working with Professor [Gary Cottrell](https://cseweb.ucsd.edu/~gary/) on the SMART (Small Molecule Accurate Recognition Technology) project. I was previously advised by Professor
-[Edwin Solares](https://edwinsolares.com/) on multiple computer vision projects regarding species
+I am currently working with Professor [Garrison W. Cottrell](https://cseweb.ucsd.edu/~gary/) on the SMART (Small Molecule Accurate Recognition Technology) project. I was previously advised by Professor
+[Edwin A. Solares](https://edwinsolares.com/) on multiple computer vision projects regarding species
 rescue and agricultural and language conservation, as well as Professors [Shengjie (Patrick) Zhai](https://www.unlv.edu/people/shengjie-zhai) and [Ming Zhu](https://www.unlv.edu/people/ming-zhu-phd)
 on an analytical project on LLM tokenization and domain adaptation. I am also grateful to have
 previously worked with Professor [Arya Mazumdar](https://mazumdar.ucsd.edu/) as part of the Regents
