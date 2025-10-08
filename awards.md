@@ -4,14 +4,14 @@ permalink: /awards/index.html
 title: Awards
 ---
 
-> Update: 20th Sep 2024
+> Update: Oct 8, 2025
 
 ## Scholarships
 
-- September 2023-2027: **Regents' Scholarship** @ University of California, San Diego
+- Sep 2023 - Jun 2027: **Regents' Scholarship** @ University of California, San Diego
 
-## Competitions
-
-- 
+## Programs
+- Sep 2025 - Jun 2026: **NSF REU: Interdisciplinary AI** @ University of California, San Diego
+- Jun 2024 - Aug 2024: **NSF REU: AI SUSTEIN** @ University of Nevada, Las Vegas
 
 <br>

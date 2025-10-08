@@ -10,7 +10,7 @@ Hi, I am **Anthony Tong**.
 
 I am a third year undergraduate student double majoring in Computer Science and Applied Mathematics
 at University of California, San Diego (UCSD) and broadly interested in building tools for
-applications in AI.
+interdisciplinary AI applications.
 
 I am currently working with Professor [Garrison W. Cottrell](https://cseweb.ucsd.edu/~gary/) on the SMART (Small Molecule Accurate Recognition Technology) project. I was previously advised by Professor
 [Edwin A. Solares](https://edwinsolares.com/) on multiple computer vision projects regarding species
@@ -24,6 +24,7 @@ generative models.
 
 ## News and Updates
 
+- I will be a tutor for *CSE 151A: Learning Algorithms* in Fall 2025!
 - I will be a head tutor for *CSE 150A: Introduction to Artificial Intelligence* in Summer Session I 2025!
 - I will be a head tutor for *CSE 151B: Deep Learning* in Spring 2025!
 - I will be a head tutor for *CSE 150A: Introduction to Artificial Intelligence* in Winter 2025!
