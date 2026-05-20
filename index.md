@@ -24,6 +24,9 @@ generative models.
 
 ## News and Updates
 
+- I will be a head tutor for *CSE 151B: Deep Learning* in Spring 2026!
+- SPECTRE is published! See it [here!](https://pubs.acs.org/doi/10.1021/acs.jcim.5c02444)
+- I will be a head tutor for *CSE 150A: Introduction to Artificial Intelligence* in Winter 2026!
 - I will be a tutor for *CSE 151A: Learning Algorithms* in Fall 2025!
 - I will be a head tutor for *CSE 150A: Introduction to Artificial Intelligence* in Summer Session I 2025!
 - I will be a head tutor for *CSE 151B: Deep Learning* in Spring 2025!
