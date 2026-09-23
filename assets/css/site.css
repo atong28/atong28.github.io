@@ -1,0 +1,72 @@
+/* Anthony Tong — "Index" design system
+   Ledger/list layout · Geist + Geist Mono · light, minimal.
+   Ported from the chosen design-system prototype (index-list.html). */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono&display=swap");
+
+:root{
+  --bg:#FFFFFF; --bg-2:#F2F2F2; --fg:#161616; --soft:#8A8A8A;
+  --line:#EDEDED; --link-line:#D4D4D4;
+  --sans:"Geist",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,monospace;
+  --fs-body:14px; --fs-lead:15px; --fs-meta:12.5px; --fs-small:12px;
+  --maxw:1000px; --label-col:200px; --date-col:100px; --gap:32px; --row-pad:22px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:var(--fs-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--link-line)}
+a:hover{border-color:var(--fg)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:40px 32px 80px}
+.row{display:grid;grid-template-columns:var(--label-col) minmax(0,1fr);gap:var(--gap);padding:var(--row-pad) 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.k{color:var(--soft)}
+
+/* top / nav row */
+.top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.top nav{display:flex;gap:20px;flex-wrap:wrap}
+.top nav a{border:0;color:var(--soft)}
+.top nav a:hover,.top nav a.on{color:var(--fg)}
+
+/* about */
+.me{display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:var(--gap);align-items:start}
+.me img{width:140px;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1)}
+.me p{margin:0 0 12px;max-width:60ch;font-size:var(--fs-lead)}
+.me p:last-child{margin-bottom:0}
+
+/* dated lists (news, awards) */
+.t{display:grid;grid-template-columns:var(--date-col) minmax(0,1fr);gap:16px;padding:2px 0}
+.t .d{font-family:var(--mono);font-size:var(--fs-meta);color:var(--soft);padding-top:1px}
+
+/* publications */
+.pub{margin-bottom:16px}
+.pub:last-child{margin-bottom:0}
+.pub .au{color:var(--soft);margin-top:2px}
+.pub .au b,.pub .au strong{color:var(--fg);font-weight:500}
+.pub .v{font-family:var(--mono);font-size:var(--fs-small);color:var(--soft);margin-top:2px}
+.legend{color:var(--soft);font-size:var(--fs-small);margin-bottom:16px}
+
+/* embeds */
+.src{font-family:var(--mono);font-size:var(--fs-small);color:var(--soft);margin-bottom:10px}
+.embed{margin:0 0 4px}
+.video{position:relative;aspect-ratio:16/9;background:var(--bg-2);max-width:640px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+figure{margin:0}
+figcaption{color:var(--soft);margin-top:6px;font-size:var(--fs-small)}
+.embed--figure img{max-width:100%;height:auto;display:block}
+
+/* contact + footer */
+.links{display:flex;gap:20px;flex-wrap:wrap}
+.copy{color:var(--soft);font-size:var(--fs-small);padding-top:22px;border-top:1px solid var(--line);margin-top:0}
+
+/* generic prose inside a content column */
+.prose p{margin:0 0 12px;max-width:62ch;font-size:var(--fs-lead)}
+.prose p:last-child{margin-bottom:0}
+.prose ul{margin:0;padding:0;list-style:none}
+.prose li{padding:2px 0}
+.muted{color:var(--soft)}
+
+@media(max-width:700px){
+  .row,.me{grid-template-columns:1fr;gap:10px}
+  .t{grid-template-columns:1fr;gap:0}
+  .wrap{padding:28px 20px 60px}
+}

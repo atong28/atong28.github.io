@@ -1,0 +1,21 @@
+# Serves the built Jekyll site (_site) for anthony-tong.com over a Cloudflare
+# tunnel. Rebuild the site first (see deploy/build.sh), then:
+#   cd deploy && docker compose up -d
+services:
+  web:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ../_site:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    depends_on: [web]
+    # Run as the host user that owns the 0400 tunnel credentials file.
+    user: "1000:1000"
+    command: tunnel --no-autoupdate --config /etc/cloudflared/config.yml run
+    volumes:
+      - ./tunnel-config.yml:/etc/cloudflared/config.yml:ro
+      - ${HOME}/.cloudflared/b30e2185-7e2f-4174-afa9-db43a10966ba.json:/creds/b30e2185-7e2f-4174-afa9-db43a10966ba.json:ro

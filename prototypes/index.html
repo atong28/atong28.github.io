@@ -1,0 +1,75 @@
+<!-- @dsCard group="Overview" name="Compare all three" subtitle="Side-by-side hub + authoring workflow" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design prototypes — Anthony Tong</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0F1012;--card:#1A1C1F;--fg:#F2F2F0;--soft:#9A9CA1;--line:#2A2D31;--accent:#7EA6FF}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:"Inter",system-ui,sans-serif;line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:64px 28px 80px}
+  h1{font-size:34px;letter-spacing:-.02em;margin:0 0 8px}
+  .lead{color:var(--soft);max-width:60ch;margin:0 0 40px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .opt{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
+  .opt:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .swatchband{height:120px;display:flex}
+  .swatchband span{flex:1}
+  .opt .body{padding:18px 20px 22px}
+  .opt h2{font-size:18px;margin:0 0 6px}
+  .opt .tag{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .opt p{font-size:13.5px;color:var(--soft);margin:8px 0 0}
+  .note{margin-top:44px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px}
+  .note h3{margin:0 0 10px;font-size:16px}
+  .note p{color:var(--soft);font-size:14px;margin:0 0 10px}
+  code{background:#000;border:1px solid var(--line);border-radius:5px;padding:2px 7px;font-size:12.5px;color:#B9C9FF}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Website redesign — pick a direction</h1>
+    <p class="lead">Three clean, minimal design systems, each rendering your real content (About, News,
+      Publications) and a live YouTube-embed demo. Open each, compare, and tell me which one to build out —
+      or mix elements between them.</p>
+
+    <div class="grid">
+      <a class="opt" href="editorial.html">
+        <div class="swatchband"><span style="background:#FBFAF6"></span><span style="background:#9A4A32"></span><span style="background:#7A6A4F"></span></div>
+        <div class="body">
+          <div class="tag">Prototype 1</div>
+          <h2>Editorial</h2>
+          <p>Warm paper, literary serif, a drop-cap, one terracotta accent. Reads like a refined academic journal.</p>
+        </div>
+      </a>
+      <a class="opt" href="swiss.html">
+        <div class="swatchband"><span style="background:#FFFFFF"></span><span style="background:#111214"></span><span style="background:#1F53FF"></span></div>
+        <div class="body">
+          <div class="tag">Prototype 2</div>
+          <h2>Swiss / Technical</h2>
+          <p>Stark white, grid columns, hairlines, monospace labels, one signal blue. Precise and engineered.</p>
+        </div>
+      </a>
+      <a class="opt" href="pastel.html">
+        <div class="swatchband"><span style="background:#E8EFE9"></span><span style="background:#ECEAF7"></span><span style="background:#F6E9E8"></span></div>
+        <div class="body">
+          <div class="tag">Prototype 3</div>
+          <h2>Soft</h2>
+          <p>Muted pastels, rounded cards, soft shadows. Warm and approachable, still minimal.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="note">
+      <h3>How you'd edit the site (all three share this)</h3>
+      <p>Content stays in plain Markdown, exactly like today's <code>index.md</code> / <code>publications.md</code>.
+        The only new thing is small <b>shortcodes</b> for rich embeds, so you never touch HTML:</p>
+      <p><code>{% youtube "aqz-KE-bpKQ" %}</code> &nbsp; <code>{% figure "cat.JPG" "My cat" %}</code> &nbsp; <code>{% pdf "cv.pdf" %}</code></p>
+      <p>See <b>AUTHORING.md</b> in this folder for the full proposed workflow and the Jekyll includes that power these.</p>
+    </div>
+  </div>
+</body>
+</html>

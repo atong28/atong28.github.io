@@ -1,0 +1,14 @@
+{%- comment -%}
+  A single publication entry. Bold your own name with **Anthony Tong**.
+  Usage:
+    {% include pub.html
+       title="SPECTRE: A Multimodal Spectral Transformer for Small Molecule Annotation"
+       url="https://pubs.acs.org/doi/10.1021/acs.jcim.5c02444"
+       authors="W. Xu†, B. Ryu†, **Anthony Tong**, ..., G. W. Cottrell~"
+       venue="J. CHEM. INF. MODEL. · 2025" %}
+{%- endcomment -%}
+<div class="pub">
+  <a href="{{ include.url }}">{{ include.title }}</a>
+  <div class="au">{{ include.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>
+  {% if include.venue %}<div class="v">{{ include.venue }}</div>{% endif %}
+</div>

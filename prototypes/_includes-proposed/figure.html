@@ -1,0 +1,10 @@
+{%- comment -%}
+  Captioned image, sized and centered. Path is relative to /images.
+  Usage:
+      {% include figure.html src="cat.JPG" caption="My cat" %}
+      {% include figure.html src="teams/teams.jpg" caption="The team" width="60%" %}
+{%- endcomment -%}
+<figure class="embed embed--figure" style="{% if include.width %}max-width:{{ include.width }};{% endif %}">
+  <img src="{{ site.url }}/images/{{ include.src }}" alt="{{ include.caption | default: '' }}" loading="lazy">
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

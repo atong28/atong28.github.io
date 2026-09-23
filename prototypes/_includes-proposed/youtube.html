@@ -1,0 +1,15 @@
+{%- comment -%}
+  Responsive YouTube embed (privacy-friendly nocookie domain).
+  Usage in any .md page:
+      {% include youtube.html id="aqz-KE-bpKQ" %}
+      {% include youtube.html id="aqz-KE-bpKQ" caption="My talk at ..." %}
+{%- endcomment -%}
+<figure class="embed embed--video">
+  <div class="embed__frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ include.id }}"
+            title="{{ include.caption | default: 'Embedded video' }}"
+            allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture"
+            allowfullscreen loading="lazy"></iframe>
+  </div>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

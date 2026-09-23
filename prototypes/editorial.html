@@ -1,0 +1,176 @@
+<!-- @dsCard group="Design Directions" name="Editorial" subtitle="Warm paper · serif · terracotta accent · drop-cap" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthony Tong — Editorial prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     DESIGN SYSTEM 1 — "EDITORIAL"
+     Warm paper, literary serif display, one muted accent.
+     Feels like a well-set academic journal / personal letter.
+     ============================================================ */
+  :root{
+    --paper:      #FBFAF6;   /* page background  */
+    --paper-2:    #F3F0E8;   /* recessed panels  */
+    --ink:        #23201C;   /* primary text     */
+    --ink-soft:   #5C574E;   /* secondary text   */
+    --line:       #E3DDD0;   /* hairlines        */
+    --accent:     #9A4A32;   /* terracotta       */
+    --accent-2:   #7A6A4F;   /* olive brown      */
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans:  "Inter", system-ui, sans-serif;
+    --maxw: 720px;
+    --radius: 4px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif); font-size:19px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .15s}
+  a:hover{border-color:var(--accent)}
+
+  /* ---- top bar ---- */
+  header.site{
+    max-width:var(--maxw); margin:0 auto; padding:34px 24px 0;
+    display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .brand{font-family:var(--serif); font-size:22px; font-weight:600; letter-spacing:.01em}
+  .brand span{color:var(--accent)}
+  nav.top{font-family:var(--sans); font-size:14px}
+  nav.top a{color:var(--ink-soft); margin-left:22px; border:none; position:relative}
+  nav.top a:hover, nav.top a.active{color:var(--ink)}
+  nav.top a.active::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--accent)}
+
+  .rule{max-width:var(--maxw); margin:26px auto 0; padding:0 24px}
+  .rule hr{border:none; border-top:1px solid var(--line); margin:0}
+
+  main{max-width:var(--maxw); margin:0 auto; padding:0 24px 90px}
+
+  /* ---- hero / about ---- */
+  .hero{padding:46px 0 8px}
+  .kicker{font-family:var(--sans); font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-2); margin-bottom:14px}
+  .hero h1{font-size:44px; line-height:1.1; font-weight:600; margin:0 0 8px; letter-spacing:-.01em}
+  .hero .sub{font-size:20px; color:var(--ink-soft); font-style:italic; margin:0 0 26px}
+  .portrait{
+    float:right; width:158px; height:200px; object-fit:cover; border-radius:var(--radius);
+    margin:6px 0 18px 28px; filter:sepia(.12) saturate(.95);
+    box-shadow:0 1px 0 var(--line), 0 18px 34px -22px rgba(60,45,30,.5);
+  }
+  p{margin:0 0 20px}
+  .lede::first-letter{
+    font-size:58px; line-height:.8; float:left; padding:6px 10px 0 0; color:var(--accent); font-weight:500;
+  }
+
+  /* ---- section headings ---- */
+  h2.section{
+    font-family:var(--sans); font-size:13px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-soft); font-weight:600; margin:54px 0 20px; display:flex; align-items:center; gap:14px;
+  }
+  h2.section::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  /* ---- news list ---- */
+  ul.news{list-style:none; margin:0; padding:0}
+  ul.news li{position:relative; padding:12px 0 12px 26px; border-bottom:1px dotted var(--line); font-size:17.5px}
+  ul.news li:last-child{border-bottom:none}
+  ul.news li::before{content:""; position:absolute; left:2px; top:22px; width:7px; height:7px; border-radius:50%; background:var(--accent); opacity:.85}
+  ul.news em{color:var(--accent-2); font-style:italic}
+
+  /* ---- publications ---- */
+  .pub{padding:20px 0; border-bottom:1px solid var(--line)}
+  .pub:last-child{border-bottom:none}
+  .pub .title{font-size:20px; line-height:1.35; font-weight:500; display:block; margin-bottom:6px}
+  .pub .authors{font-family:var(--sans); font-size:14.5px; color:var(--ink-soft); line-height:1.55}
+  .pub .authors b{color:var(--ink)}
+  .venue{display:inline-block; font-family:var(--sans); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent); background:var(--paper-2); border:1px solid var(--line); padding:2px 9px; border-radius:100px; margin-top:8px}
+
+  /* ---- embed (the authoring feature demo) ---- */
+  .embed-note{font-family:var(--sans); font-size:13px; color:var(--ink-soft); margin:0 0 12px}
+  .embed-note code{background:var(--paper-2); border:1px solid var(--line); border-radius:4px; padding:1px 6px; font-size:12.5px}
+  .video{position:relative; aspect-ratio:16/9; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); box-shadow:0 20px 40px -28px rgba(60,45,30,.55)}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  figcaption{font-family:var(--sans); font-size:13px; color:var(--ink-soft); text-align:center; margin-top:10px}
+
+  footer.site{max-width:var(--maxw); margin:0 auto; padding:30px 24px 60px; border-top:1px solid var(--line);
+    font-family:var(--sans); font-size:13px; color:var(--ink-soft)}
+  footer.site a{color:var(--ink-soft); border:none}
+  footer.site a:hover{color:var(--accent)}
+
+  .proto-tag{position:fixed; left:14px; bottom:14px; font-family:var(--sans); font-size:11px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft); background:var(--paper); border:1px solid var(--line); padding:6px 12px; border-radius:100px}
+  @media(max-width:560px){ .portrait{float:none; display:block; margin:0 0 20px; width:130px; height:165px} .hero h1{font-size:34px} }
+</style>
+</head>
+<body>
+  <header class="site">
+    <div class="brand">Anthony <span>Tong</span></div>
+    <nav class="top">
+      <a class="active" href="#">About</a>
+      <a href="#pubs">Publications</a>
+      <a href="#">Awards</a>
+      <a href="#">Blog</a>
+    </nav>
+  </header>
+  <div class="rule"><hr></div>
+
+  <main>
+    <section class="hero">
+      <div class="kicker">Computer Science · Applied Mathematics · UC San Diego</div>
+      <h1>About Me</h1>
+      <p class="sub">Building tools for interdisciplinary AI.</p>
+      <img class="portrait" src="../images/me.jpg" alt="Anthony Tong">
+      <p class="lede">Hi, I am <b>Anthony Tong</b> — a third-year undergraduate double majoring in
+        Computer Science and Applied Mathematics at UC San Diego, broadly interested in building
+        tools for interdisciplinary AI applications.</p>
+      <p>I currently work with Professor <a href="https://cseweb.ucsd.edu/~gary/">Garrison W. Cottrell</a>
+        on the SMART (Small Molecule Accurate Recognition Technology) project. I was previously advised
+        by Professor <a href="https://edwinsolares.com/">Edwin A. Solares</a> on computer-vision projects
+        in species rescue and agricultural and language conservation, and by Professors
+        <a href="https://www.unlv.edu/people/shengjie-zhai">Shengjie Zhai</a> and
+        <a href="https://www.unlv.edu/people/ming-zhu-phd">Ming Zhu</a> on LLM tokenization and domain
+        adaptation. I'm also grateful to have worked with Professor
+        <a href="https://mazumdar.ucsd.edu/">Arya Mazumdar</a> through the Regents Scholars Research
+        Initiative on logistic regression and diffusion generative models.</p>
+    </section>
+
+    <h2 class="section">News &amp; Updates</h2>
+    <ul class="news">
+      <li>I will be a head tutor for <em>CSE 151B: Deep Learning</em> in Spring 2026.</li>
+      <li>SPECTRE is published! <a href="https://pubs.acs.org/doi/10.1021/acs.jcim.5c02444">Read it here.</a></li>
+      <li>I will be a head tutor for <em>CSE 150A: Introduction to Artificial Intelligence</em> in Winter 2026.</li>
+      <li>I will be a tutor for <em>CSE 151A: Learning Algorithms</em> in Fall 2025.</li>
+      <li>I will be a head tutor for <em>CSE 150A: Introduction to AI</em> in Summer Session I 2025.</li>
+    </ul>
+
+    <h2 class="section" id="pubs">Selected Publications</h2>
+    <div class="pub">
+      <a class="title" href="https://www.frontiersin.org/articles/10.3389/frai.2026.1794183">Deep learning classification of reproductive tissue from ultrasound: sex determination in red abalone (Haliotis rufescens)</a>
+      <div class="authors">Edwin A. Solares<sup>†</sup>, <b>Anthony Tong</b>, Sohyun Yoo, W. Gosline-Niheu, Kevin Jacob, Gordon Feliz, Sachin Loecher, Yuan Zhai, Maggie Mah, Sara E. Boles, A. E. Fagbohun, Jackson A. Gross<sup>~</sup></div>
+      <span class="venue">Frontiers in AI · 2026</span>
+    </div>
+    <div class="pub">
+      <a class="title" href="https://pubs.acs.org/doi/10.1021/acs.jcim.5c02444">SPECTRE: A Multimodal Spectral Transformer for Small Molecule Annotation</a>
+      <div class="authors">Wangdong Xu<sup>†</sup>, Byeol Ryu<sup>†</sup>, <b>Anthony Tong</b>, H. Henry Mao, Hyunwoo Kim, James J. Zhao, Chen Zhang, Yiran Xu, Mingxun Wang, William H. Gerwick<sup>~</sup>, Garrison W. Cottrell<sup>~</sup></div>
+      <span class="venue">J. Chem. Inf. Model. · 2025</span>
+    </div>
+
+    <h2 class="section">Media &amp; Talks</h2>
+    <p class="embed-note">Authoring demo — in Markdown you'd write <code>{% youtube "aqz-KE-bpKQ" %}</code> and it renders as:</p>
+    <figure style="margin:0">
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ" title="Embedded video" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <figcaption>A talk, project demo, or reel — embedded inline from a single shortcode.</figcaption>
+    </figure>
+  </main>
+
+  <footer class="site">© 2026 Anthony Tong · <a href="mailto:a8tong@ucsd.edu">Email</a> · <a href="#">CV</a> · <a href="https://github.com/atong28">GitHub</a></footer>
+  <div class="proto-tag">Prototype 1 — Editorial</div>
+</body>
+</html>

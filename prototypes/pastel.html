@@ -1,0 +1,176 @@
+<!-- @dsCard group="Design Directions" name="Soft" subtitle="Muted pastels · rounded cards · soft shadows" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthony Tong — Soft prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     DESIGN SYSTEM 3 — "SOFT"
+     Muted pastels, rounded cards, soft shadows, gentle contrast.
+     Feels warm, calm, approachable — still minimal.
+     ============================================================ */
+  :root{
+    --bg:      #F6F4F0;
+    --card:    #FFFFFF;
+    --fg:      #2A2A32;
+    --fg-soft: #71707C;
+    --line:    #ECE8E1;
+    --sage:    #7C9A87;   /* accent — sage green */
+    --sage-bg: #E8EFE9;
+    --lav:     #8D86C9;   /* secondary accent */
+    --lav-bg:  #ECEAF7;
+    --blush-bg:#F6E9E8;
+    --sun-bg:  #F5EFDD;
+    --display: "Fraunces", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+    --maxw: 760px;
+    --r: 20px;
+    --shadow: 0 1px 2px rgba(40,35,30,.04), 0 14px 30px -18px rgba(60,55,45,.28);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--bg); color:var(--fg); font-family:var(--sans);
+    font-size:16.5px; line-height:1.65; -webkit-font-smoothing:antialiased}
+  a{color:var(--sage); text-decoration:none; font-weight:500}
+  a:hover{color:#5f7d6b; text-decoration:underline; text-underline-offset:3px}
+
+  /* ---- pill nav ---- */
+  header.site{max-width:var(--maxw); margin:0 auto; padding:22px 20px 0; display:flex; justify-content:space-between; align-items:center; gap:12px}
+  .brand{font-family:var(--display); font-size:20px; font-weight:600}
+  .brand .em{color:var(--sage)}
+  nav.top{display:flex; gap:4px; background:var(--card); padding:5px; border-radius:100px; box-shadow:var(--shadow)}
+  nav.top a{font-size:13.5px; color:var(--fg-soft); padding:7px 14px; border-radius:100px; font-weight:500}
+  nav.top a:hover{color:var(--fg); text-decoration:none}
+  nav.top a.active{background:var(--sage-bg); color:#41654e}
+
+  main{max-width:var(--maxw); margin:0 auto; padding:26px 20px 80px}
+
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); padding:30px 32px; margin-bottom:22px}
+
+  /* ---- hero ---- */
+  .hero{display:flex; gap:26px; align-items:center}
+  .hero img{width:118px; height:118px; border-radius:26px; object-fit:cover; flex-shrink:0; box-shadow:var(--shadow)}
+  .hero .tag{display:inline-block; font-size:12px; font-weight:600; letter-spacing:.04em; color:#41654e; background:var(--sage-bg); padding:4px 12px; border-radius:100px; margin-bottom:12px}
+  .hero h1{font-family:var(--display); font-size:32px; line-height:1.12; font-weight:600; margin:0 0 8px; letter-spacing:-.01em}
+  .hero p{margin:0; color:var(--fg-soft); font-size:15.5px}
+  .bio p{margin:0 0 16px}
+  .bio p:last-child{margin-bottom:0}
+  .bio b{color:var(--fg)}
+
+  .label{font-family:var(--sans); font-size:12.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-soft); margin:0 0 18px; display:flex; align-items:center; gap:10px}
+  .label .ic{width:24px; height:24px; border-radius:8px; display:grid; place-items:center; font-size:13px}
+
+  /* ---- news ---- */
+  ul.news{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px}
+  ul.news li{display:flex; gap:12px; align-items:flex-start; font-size:15.5px}
+  ul.news .chip{flex-shrink:0; font-size:11px; font-weight:600; padding:3px 10px; border-radius:100px; margin-top:2px}
+  .c-sage{background:var(--sage-bg); color:#41654e}
+  .c-lav{background:var(--lav-bg); color:#544e94}
+  .c-blush{background:var(--blush-bg); color:#a05a54}
+  .c-sun{background:var(--sun-bg); color:#8a6d2e}
+  ul.news em{font-style:italic; color:var(--fg)}
+
+  /* ---- publications ---- */
+  .pub{padding:18px; border-radius:14px; background:#FCFBF9; border:1px solid var(--line); margin-bottom:12px}
+  .pub:last-child{margin-bottom:0}
+  .pub a.t{color:var(--fg); font-weight:600; font-size:16.5px; line-height:1.35; display:block; margin-bottom:6px}
+  .pub a.t:hover{color:var(--sage)}
+  .pub .au{font-size:13.5px; color:var(--fg-soft)}
+  .pub .au b{color:var(--fg)}
+  .pub .venue{display:inline-block; font-size:11.5px; font-weight:600; color:#544e94; background:var(--lav-bg); padding:3px 10px; border-radius:100px; margin-top:10px}
+
+  /* ---- embed ---- */
+  .authoring{font-size:13.5px; color:var(--fg-soft); background:var(--sun-bg); border-radius:12px; padding:12px 16px; margin-bottom:16px}
+  .authoring code{background:#fff; border:1px solid var(--line); border-radius:6px; padding:2px 7px; font-family:ui-monospace,monospace; font-size:12.5px; color:#8a6d2e}
+  .video{position:relative; aspect-ratio:16/9; border-radius:16px; overflow:hidden; box-shadow:var(--shadow)}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  figcaption{font-size:13px; color:var(--fg-soft); text-align:center; margin-top:12px}
+
+  footer.site{text-align:center; padding:10px 20px 50px; font-size:13.5px; color:var(--fg-soft)}
+  footer.site a{color:var(--fg-soft)}
+  footer.site a:hover{color:var(--sage)}
+
+  .proto-tag{position:fixed; left:14px; bottom:14px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-soft); background:var(--card); border:1px solid var(--line); padding:6px 12px; border-radius:100px; box-shadow:var(--shadow)}
+  @media(max-width:540px){ .hero{flex-direction:column; text-align:center} .card{padding:24px} }
+</style>
+</head>
+<body>
+  <header class="site">
+    <div class="brand">Anthony <span class="em">Tong</span></div>
+    <nav class="top">
+      <a class="active" href="#">About</a>
+      <a href="#pubs">Publications</a>
+      <a href="#">Awards</a>
+      <a href="#">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card hero">
+      <img src="../images/me.jpg" alt="Anthony Tong">
+      <div>
+        <span class="tag">CS + Applied Math · UC San Diego</span>
+        <h1>Building tools for<br>interdisciplinary AI.</h1>
+        <p>Third-year undergraduate · Regents' Scholar · SMART Lab</p>
+      </div>
+    </section>
+
+    <section class="card bio">
+      <p>Hi, I am <b>Anthony Tong</b> — a third-year undergraduate double majoring in Computer Science
+        and Applied Mathematics at UC San Diego, broadly interested in building tools for
+        interdisciplinary AI applications.</p>
+      <p>I currently work with Professor <a href="https://cseweb.ucsd.edu/~gary/">Garrison W. Cottrell</a>
+        on the SMART (Small Molecule Accurate Recognition Technology) project. I was previously advised by
+        Professor <a href="https://edwinsolares.com/">Edwin A. Solares</a> on computer-vision projects in
+        species rescue and agricultural and language conservation, and by Professors
+        <a href="https://www.unlv.edu/people/shengjie-zhai">Shengjie Zhai</a> and
+        <a href="https://www.unlv.edu/people/ming-zhu-phd">Ming Zhu</a> on LLM tokenization and domain
+        adaptation. I'm also grateful to have worked with Professor
+        <a href="https://mazumdar.ucsd.edu/">Arya Mazumdar</a> through the Regents Scholars Research
+        Initiative on logistic regression and diffusion generative models.</p>
+    </section>
+
+    <section class="card">
+      <p class="label"><span class="ic c-sage">✦</span> News &amp; Updates</p>
+      <ul class="news">
+        <li><span class="chip c-sage">Spr 26</span><span>Head tutor for <em>CSE 151B: Deep Learning</em>.</span></li>
+        <li><span class="chip c-blush">New</span><span>SPECTRE is published! <a href="https://pubs.acs.org/doi/10.1021/acs.jcim.5c02444">Read it here.</a></span></li>
+        <li><span class="chip c-lav">Win 26</span><span>Head tutor for <em>CSE 150A: Introduction to AI</em>.</span></li>
+        <li><span class="chip c-sun">Fall 25</span><span>Tutor for <em>CSE 151A: Learning Algorithms</em>.</span></li>
+        <li><span class="chip c-sage">Sum 25</span><span>Head tutor for <em>CSE 150A: Introduction to AI</em>.</span></li>
+      </ul>
+    </section>
+
+    <section class="card" id="pubs">
+      <p class="label"><span class="ic c-lav">◆</span> Publications</p>
+      <div class="pub">
+        <a class="t" href="https://www.frontiersin.org/articles/10.3389/frai.2026.1794183">Deep learning classification of reproductive tissue from ultrasound: sex determination in red abalone (Haliotis rufescens)</a>
+        <div class="au">E. A. Solares<sup>†</sup>, <b>Anthony Tong</b>, S. Yoo, W. Gosline-Niheu, K. Jacob, G. Feliz, S. Loecher, Y. Zhai, M. Mah, S. E. Boles, A. E. Fagbohun, J. A. Gross<sup>~</sup></div>
+        <span class="venue">Frontiers in AI · 2026</span>
+      </div>
+      <div class="pub">
+        <a class="t" href="https://pubs.acs.org/doi/10.1021/acs.jcim.5c02444">SPECTRE: A Multimodal Spectral Transformer for Small Molecule Annotation</a>
+        <div class="au">W. Xu<sup>†</sup>, B. Ryu<sup>†</sup>, <b>Anthony Tong</b>, H. H. Mao, H. Kim, J. J. Zhao, C. Zhang, Y. Xu, M. Wang, W. H. Gerwick<sup>~</sup>, G. W. Cottrell<sup>~</sup></div>
+        <span class="venue">J. Chem. Inf. Model. · 2025</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="label"><span class="ic c-sun">▶</span> Media &amp; Talks</p>
+      <div class="authoring">In Markdown, write <code>{% youtube "aqz-KE-bpKQ" %}</code> — it becomes a rounded, responsive player:</div>
+      <figure style="margin:0">
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ" title="Embedded video" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <figcaption>A talk, project demo, or reel — embedded inline from one shortcode.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site">© 2026 Anthony Tong · <a href="mailto:a8tong@ucsd.edu">Email</a> · <a href="#">CV</a> · <a href="https://github.com/atong28">GitHub</a></footer>
+  <div class="proto-tag">Prototype 3 — Soft</div>
+</body>
+</html>

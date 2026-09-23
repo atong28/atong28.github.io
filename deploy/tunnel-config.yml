@@ -1,0 +1,12 @@
+# Cloudflare tunnel config for anthony-tong.com (apex + www).
+# Origin points at the nginx `web` service on the compose network, so the
+# static site is never published on a host port — only reachable through
+# this tunnel.
+tunnel: b30e2185-7e2f-4174-afa9-db43a10966ba
+credentials-file: /creds/b30e2185-7e2f-4174-afa9-db43a10966ba.json
+ingress:
+  - hostname: anthony-tong.com
+    service: http://web:80
+  - hostname: www.anthony-tong.com
+    service: http://web:80
+  - service: http_status:404
