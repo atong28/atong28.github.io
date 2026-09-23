@@ -29,7 +29,7 @@ a:hover{border-color:var(--fg)}
 
 /* about */
 .me{display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:var(--gap);align-items:start}
-.me img{width:140px;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1)}
+.me img{width:140px;aspect-ratio:4/5;object-fit:cover}
 .me p{margin:0 0 12px;max-width:60ch;font-size:var(--fs-lead)}
 .me p:last-child{margin-bottom:0}
 
